@@ -1,4 +1,31 @@
-[gd_scene format=3 uid="uid://lieyiwrl45li"]
+[gd_scene load_steps=5 format=3 uid="uid://lieyiwrl45li"]
 
-[node name="Node3D" type="Node3D"]
-transform = Transform3D(-0.844043, 1.01236, 0.836337, -1.52366, -0.833849, -0.150208, 0.451876, -0.920659, 1.05568, 0.0431821, -0.0563118, 0.038009)
+[ext_resource type="Script" path="res://node_3d.gd" id="1_bkadj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_42f8o"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fj5yd"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f6m84"]
+size = Vector2(200, 200)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_bkadj")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_42f8o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787587, 0)
+mesh = SubResource("SphereMesh_fj5yd")
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_f6m84")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.972824, 1.45491)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74667, 1.50848)

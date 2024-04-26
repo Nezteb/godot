@@ -1,0 +1,4 @@
+[submodule "godot-demo-projects"]
+	path = godot-demo-projects
+	url = git@github.com:Nezteb/godot-demo-projects.git
+	shallow = true
