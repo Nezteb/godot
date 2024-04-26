@@ -2,3 +2,12 @@
 	path = godot-demo-projects
 	url = git@github.com:Nezteb/godot-demo-projects.git
 	shallow = true
+[submodule "libre-aim"]
+	path = libre-aim
+	url = git@github.com:antimundo/libre-aim.git
+[submodule "Reia"]
+	path = Reia
+	url = git@github.com:Quaint-Studios/Reia.git
+[submodule "poder-solar"]
+	path = poder-solar
+	url = git@github.com:antimundo/poder-solar.git
